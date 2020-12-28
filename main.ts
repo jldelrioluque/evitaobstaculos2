@@ -1,6 +1,8 @@
 let item = false
 basic.forever(function () {
     if (maqueen.sensor(PingUnit.Centimeters) < 35 && maqueen.sensor(PingUnit.Centimeters) != 0) {
+        maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CCW, 255)
+        maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CCW, 255)
         item = Math.randomBoolean()
         if (item == true) {
             maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CW, 255)
